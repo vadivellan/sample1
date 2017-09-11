@@ -1,0 +1,498 @@
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ */
+
+
+/*------------------------------------*\
+  #SETTINGS  Global - variables
+\*------------------------------------*/
+
+$coolred    : #222;
+$lightred   : rgb(0, 189, 189);
+$red        : grey;
+$darkred    : white;
+$ThemeColor :rgb(0,189,189);
+$border: 1px solid #ddd;
+$padding: 0.625em;
+$label-font-size: 13px;
+
+
+/*------------------------------------*\
+  #SETTINGS  Box-sizing
+\*------------------------------------*/
+
+
+*
+{
+  box-sizing: border-box;
+  &:before, &:after 
+  {
+    box-sizing: border-box;
+  }
+}
+
+/*------------------------------------*\
+  #PROFILE - HEADER
+\*------------------------------------*/
+
+
+.ProfileHeader
+{
+  height:80px;
+  background-color:$ThemeColor;
+  text-align: left;
+  padding-top: 19px; 
+  .ProfileHeaderLink{color: white;font-size: 12px;}
+  .ProfileHeaderString{color: white;font-size: 25px;}
+}
+
+
+/*------------------------------------*\
+  #PROFILE - SECTION HEADER
+\*------------------------------------*/
+
+.section {
+  position: relative;
+  width: 100%;
+  border-bottom: 5px solid $darkred;
+  border-left: 2px solid $darkred;  
+  border-right: 2px solid $darkred;
+  button {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: 3em;
+    width: 3em;
+    outline: 0;
+    border: 0;
+    background: none;
+    text-indent: -9999%;
+    pointer-events: none;
+    &:before 
+    {
+      content: '1';
+      display: block;
+      position: absolute;
+      height: 12px;
+      width: 1px;
+      border-radius: 1em;
+      background: $red;
+      transform-origin: 50%;
+      top: 55%;
+      left: 52%;
+      transition: all .25s ease-in-out;
+      transform: translate(75%, -50%) rotate(45deg);
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 12px;
+      width: 1px;
+      border-radius: .1em;
+      background: $red;
+      transform-origin: 50%;
+      top: 55%;
+      left: 39%;
+      transition: all .25s ease-in-out;
+      transform: translate(-75%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.articlewrap {
+  height: 0;
+  overflow: hidden;
+  transition: all .2s ease-in;
+}
+.sectionhead 
+{
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  color: #888;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
+  padding-left:0em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: left;
+  font-weight: lighter;
+}
+
+.article {
+  padding: 1em;
+  color: #333;
+  line-height: 1.3;
+}
+/*------------------------------------*\
+  #PROFILE - SECTION OPEN
+\*------------------------------------*/
+.section.open 
+{
+  button {
+    &:before, &:after {
+      height: 12px;
+    }
+    &:before {
+      transform: translate(0%, -50%) rotate(-45deg);
+      top: 50%;
+      left: 58%;
+     
+    }
+    &:after {
+      transform: translate(0%, -50%) rotate(45deg);
+      top: 67%;
+      left: 58%;
+    }
+  }
+  .articlewrap {
+    height: auto;
+  }
+}
+
+
+
+
+
+
+.hr
+{
+  width: 100%;
+  height: 1px;
+  background-color: #D3D3D3;
+}
+
+
+/*------------------------------------*\
+  #PROFILE - PROFILE DETAILS 
+\*------------------------------------*/
+
+
+.profile_name,.profile_email,.profile_mobilenumber,.profile_address
+{
+  display: block-line;
+  height: 80px;
+ 
+  span 
+  {
+    display: block;
+    color: $ThemeColor;
+    font-weight: lighter;
+    text-indent: 38px;
+    font-size: 0.7em;
+  }
+  img
+  {
+    color: $ThemeColor;
+    position: absolute;
+    z-index: 1;
+    
+   
+       
+  }
+
+  input
+  {
+    padding: 8px;
+    display: inline;
+    position: absolute;
+
+    border: 0.3px white solid;
+    border-bottom-color: #D3D3D3;
+    font-weight: 100;
+    color: #A7A7A7;
+    text-indent: 30px;
+    width: 90%;
+    font-size: 1.2em;
+
+  }
+  textarea
+  { padding: 5px;
+    display: inline;
+    position: absolute;
+
+    border: 1px white solid;
+    border-bottom-color: $ThemeColor;
+    font-weight: lighter;
+    color: gray;
+    text-indent: 25px;
+    width: 90%;
+    maxHeight:30px;
+    font-size: 1em;
+
+  }
+
+}
+.profile_name
+{
+  img
+  {
+    margin-top: 1px;
+    left:18px;
+  }
+ 
+
+}.profile_email
+{
+  img
+  {
+    margin-top: -24px;
+    left:13px;
+  }
+}
+.profile_mobilenumber
+{
+  img
+  {
+    margin-top: -18px;
+    left:12px;
+  }
+}
+.profile_address
+{
+  img
+  {
+    margin-top: 5px;
+    left:12px;
+  }
+  span
+  {
+    display: block;
+    color: $ThemeColor;
+    font-weight: lighter;
+    text-indent: 1px;
+    font-size: 0.7em;
+   
+  }
+
+}
+.display_inline
+{
+  display: inline;
+  
+}
+.btn,.a
+{
+  border-radius: 1px;
+  background-color: $ThemeColor;
+  color: white;
+}
+
+
+.List_picker
+{
+  margin-top: 55px;
+  
+ 
+  
+  .City,.State,
+  {
+  
+    margin-top: 10px;
+    margin-left: 40px;
+    text-align: left;
+    span
+    {
+      display: block;
+      color: $ThemeColor;
+      font-weight: lighter;
+      font-size: 0.7em;
+       margin-bottom: 5px;
+       text-indent: 25px;
+       left: -10px;
+    }
+  
+    p.State_head
+    {
+      font-weight: lighter;
+      color:$ThemeColor;
+      font-size: 0.7em;
+      line-height: 1px;
+     
+    }
+    p.State_value
+    {
+      font-weight: lighter;
+      color: gray;
+      margin-top: 10px;
+      &:after 
+      {
+        content:"˅";
+       
+         padding-left: 10px;
+         font-size: 9px;
+      } 
+    }
+   
+  
+  }
+}
+
+.PROOFS
+{
+  margin-top: 55px;
+  margin-left: 400px;
+  position: relative;
+ 
+ 
+  
+  .PAN,.ADTHAR,.PASSPORT
+  {
+    margin: 10px;
+    span
+    {
+      display: block;
+      color: gray;
+      font-weight: lighter;
+      font-size: 0.7em;
+     margin-bottom: 5px;
+    }
+    p
+    {
+     
+      
+      display: inline;
+      font-weight: lighter;
+      color: gray;
+      &:after 
+      {
+        content:"˅";
+       
+         padding-left: 10px;
+         font-size: 9px;
+      }
+     
+     
+    }
+   
+  
+  }
+}
+
+
+
+@media only screen and (max-width: 632px) {
+  .profile 
+  {
+    img
+    {
+      display: block;
+      margin: auto;
+      width: 40%;
+
+    }
+  }
+}
+@media only screen and (min-width: 631px) {
+  .profile 
+  { margin-bottom: 20px;
+    img
+    {
+      display: block;
+      margin: auto;
+      width: 80%;
+      margin-bottom: 20px; 
+    }
+  }
+}
+
+
+
+
+
+
+/*------------------------------------*\
+  #PROFILE - TEXT INPUTS WITH FLOATING LABEL DEMO
+\*------------------------------------*/
+// Demo styles
+form {
+  width: 600px;
+  margin: 2em auto;
+  
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  
+  legend {
+    font-size: 2em;
+    margin-bottom: 1em;
+    width: 100%;
+    border-bottom: &border;
+  }
+}
+
+
+// float label
+
+  .control {
+    height: 100px;
+   
+    position: relative;
+    width: 100%;
+    border-bottom: &border;
+   
+    
+
+
+  
+  input, textarea {
+    display: block;
+    width: 100%;
+    border: 0;
+    outline: 0;
+   
+    border: 0.3px white solid;
+    border-bottom-color: $ThemeColor;
+    font-weight: lighter;
+    color: gray;
+    
+    // inactive but shown label (exceptions: opacity and top)
+    & + label 
+    {
+      position: absolute;
+      top: 5.1px;
+      font-size: 20px;
+      transition: top 0.7s ease, opacity 0.7s ease, font-size 0.7s ease;
+      opacity: 0;
+      // Some nice styling
+      font-size: &label-font-size;
+      font-weight: lighter;
+      color: $ThemeColor;
+    }
+    
+    // THE MAGIC
+    // as soon as we start typing, the "required" attribute will
+    // set the state to valid and our pseudo selector will match
+    &:valid + label 
+    {
+      opacity: 1;
+      top: -13px;
+      font-size: 10px;
+    }
+    
+    // and we highlight the focused input label
+    &:focus + label 
+    {
+      color: $ThemeColor;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ */
+/*------------------------------------*\
+  #SETTINGS  Global - variables
+\*------------------------------------*/
+@font-face {
+  font-family: myFirstFont,Sans-serif;
+  src: url(http://fonts.googleapis.com/css?family=Open+Sans); }
+/*------------------------------------*\
+  #SETTINGS  Box-sizing
+\*------------------------------------*/
+* {
+  box-sizing: border-box; }
+  *:before, *:after {
+    box-sizing: border-box;
+    height: auto; }
+
+/*------------------------------------*\
+  #Insight - HEADER
+\*------------------------------------*/
+.InsightHeader {
+  height: auto;
+  background-color: #00bdbd;
+  text-align: left;
+  padding-top: 19px; }
+  .InsightHeader .ProfileHeaderLink {
+    color: white;
+    font-size: 12px; }
+  .InsightHeader .ProfileHeaderString {
+    color: white;
+    font-size: 25px; }
+
+/*------------------------------------*\
+  #Insight - ARTICLE BANNER IMAGE
+\*------------------------------------*/
+.bannerImage div.cover {
+  overflow: auto;
+  width: 100vw;
+  height: 30vw;
+  min-height: 270px;
+  top: -16px;
+  position: relative;
+  background-color: black; }
+  .bannerImage div.cover h1 {
+    position: absolute;
+    color: white;
+    height: 300px; }
+  .bannerImage div.cover .image {
+    width: 100vw;
+    height: 30vw; }
+.bannerImage .authorHead {
+  top: -100px; }
+  .bannerImage .authorHead .postDate {
+    display: inline;
+    position: relative; }
+    .bannerImage .authorHead .postDate img.likes {
+      position: relative;
+      display: block;
+      left: 120px;
+      top: -48px; }
+    .bannerImage .authorHead .postDate span {
+      position: relative;
+      top: -10px;
+      left: 10px;
+      color: white; }
+  .bannerImage .authorHead img.author {
+    position: relative;
+    border: 5px solid white; }
+
+/*------------------------------------*\
+  #Insight - ARTICLE PARA
+\*------------------------------------*/
+.articles {
+  font-family: myFirstFont; }
+  .articles .articlesStrong {
+    color: #00bdbd; }
+
+.relate_article_all h5, .relate_article_own h5 {
+  color: gray;
+  padding-bottom: 10px;
+  font-weight: lighter;
+  font-size: 12px; }
+.relate_article_all h6, .relate_article_own h6 {
+  color: #00bdbd;
+  padding-bottom: 10px;
+  font-weight: lighter;
+  font-size: 10px; }
+
+.relate_article_Cell {
+  position: relative;
+  margin-bottom: 5px;
+  width: 300px; }
+  .relate_article_Cell .relate_article_Cell_image {
+    display: inline-block; }
+    .relate_article_Cell .relate_article_Cell_image .article_Cell_image {
+      height: 80px;
+      width: 100px;
+      background-color: #00bdbd; }
+  .relate_article_Cell .relate_article_Cell_Info {
+    font-family: myFirstFont;
+    padding: 10px;
+    line-height: 1px;
+    vertical-align: top;
+    display: inline-block;
+    font-size: 12px; }
+    .relate_article_Cell .relate_article_Cell_Info .Date {
+      color: #00bdbd; }
+    .relate_article_Cell .relate_article_Cell_Info .title {
+      padding-top: 0.6em;
+      color: gray; }
+    .relate_article_Cell .relate_article_Cell_Info .read {
+      padding-top: 1em;
+      color: #00bdbd; }
+  .relate_article_Cell h6 strong {
+    color: #00bdbd; }
+
+.relate_article_own {
+  position: relative; }
+
+.tags h5 {
+  color: gray;
+  padding-bottom: 10px;
+  font-weight: lighter;
+  font-size: 14px; }
+.tags div {
+  background-color: lightgray;
+  font-size: 12px;
+  color: gray;
+  padding: 5px;
+  display: inline-block;
+  line-height: 20px;
+  margin: 2px;
+  position: relative; }
+
+.commentImage {
+  width: 60px; }
+
+/*------------------------------------*\
+  #Insight - ARTICLE COMMENTS
+\*------------------------------------*/
+.comments h3 {
+  color: #00bdbd;
+  font-size: 90%;
+  padding: 2px; }
+.comments .hr {
+  height: 3px;
+  width: 100%;
+  background-color: #00bdbd;
+  margin-bottom: 10px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,252 @@
+
+
+
+
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #SETTINGS  Global - variables
+\*------------------------------------*/
+
+
+$ThemeColor :rgb(0,189,189);
+
+@font-face 
+{
+    font-family: myFirstFont,Sans-serif;
+    src: url(http://fonts.googleapis.com/css?family=Open+Sans);
+}
+
+/*------------------------------------*\
+  #SETTINGS  Box-sizing
+\*------------------------------------*/
+
+
+*
+{
+  box-sizing: border-box;
+  &:before, &:after 
+  {
+    box-sizing: border-box;
+    height: auto;
+  }
+}
+
+/*------------------------------------*\
+  #Insight - HEADER
+\*------------------------------------*/
+.InsightHeader
+{
+  height: auto;
+  background-color:$ThemeColor;
+  text-align: left;
+  padding-top: 19px; 
+ 
+  .ProfileHeaderLink{color: white;font-size: 12px;}
+  .ProfileHeaderString{color: white;font-size: 25px;}
+}
+
+
+
+/*------------------------------------*\
+  #Insight - ArticlesCarosuelView
+\*------------------------------------*/
+
+
+.articlesCarosuelView
+{
+    height: auto;
+    background: #E1E0E0;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    top:-16px;
+
+    p
+    {
+        color: $ThemeColor;
+        font-size: 20px;
+        padding: 10px 10%;
+    }
+
+
+}
+
+/*------------------------------------*\
+  #Insight - ArticlesView
+\*------------------------------------*/
+.ArticlesView
+{
+    margin-top: 1vh;
+    ul 
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+         li 
+         {
+                display: inline;
+                margin: 10px;
+                
+                a
+                {
+                    color: grey;
+                    font-weight: lighter;
+                }
+                     
+         }
+         
+    }
+    .active
+    {
+        color: $ThemeColor;
+    }
+    
+}
+
+/*------------------------------------*\
+  #Insight - Article
+\*------------------------------------*/
+.Article
+{
+   
+    max-height: 100%;
+   
+
+    .Article_bfImage
+    {
+        
+        
+        widows: 100%;
+        margin: 5px;
+       
+        .Article_bfImage1
+        {
+            max-width:290px;
+            max-height: 100%;
+         
+            
+        }
+        .Article_bfImage2
+        {
+            
+            left: 0px;
+            height: 20px;
+            width: 20px;
+            margin:auto;
+
+           
+           
+        }
+    }
+ 
+   
+
+    .Article_content
+    {
+        margin:auto;
+        background-color:white;
+        max-width:300px;
+        .Article_Title
+        {
+            h6
+            {
+               
+                color: $ThemeColor;
+                font-weight: lighter;
+                padding-bottom: 5px;
+            }
+            p
+            {
+                color: gray;
+                font-size: 12px;
+                font-weight: lighter;
+
+
+            }
+        }
+    }
+  
+    margin: 10px 0px;
+   
+}
+
+
+.Readmore
+{
+    color: $ThemeColor;
+    font-weight: lighter;
+    padding-bottom: 2px;
+    font-size: 12px;
+    float: left;
+    .left
+    {
+        float: left;
+    }
+    .right
+    {
+        float: right;
+    }
+}
+
+.LoadmoreLink
+{  
+    color: $ThemeColor;
+    border: 1px solid $ThemeColor;
+    margin: auto;
+    
+    text-align: center;
+    padding: 5px;
+    max-width:300px;
+   
+   
+
+}
+.Loadmore
+{
+    padding-bottom: 10px;
+}
+
+
+
+.sample{
+    width: 500px;
+    height: 500px;  
+    background-color: orange;
+  }
+  
+
+
+  .react-materialize Carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+}
+
+.carousel-item
+{display:none;width:300px;height:200px;position:absolute;top:0;left:0}
