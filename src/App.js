@@ -284,7 +284,7 @@ class Accordion extends React.Component{
           <div onClick={this.Notification} className="sectionhead">Notification</div>
           <hr/>
                       <Collapse isOpen={this.state.Notificationcollapse}>
-                                  <ChangePassword/>
+                                  <Notification/>
                       </Collapse>                                    
        
       </div>
@@ -357,6 +357,45 @@ var AuthenticationSetting = createReactClass({
           <input type="checkbox"/>
          <span className="slider round"></span>
        </label>
+        
+        
+       
+
+         <span>&ensp;2 Factor Authentication</span> 
+
+          <div className="why2fa">
+            <h6>Why 2FA over OTP?</h6>
+            <ul><li> <i class="icon-circle text-success" ></i>  While receiving OTP on your mobile device looks like “Something you have control over”, your OTP is actually in possession with the origin server and the carrier transmitter making it vulnerable.</li>
+			 											
+			   											<li> <i class="icon-circle text-success" ></i>  2-Factor Authentication tokens are nothing but extension of the capability to generate user specific OTPs at client’s device rather than transmission of data over network.</li>
+														
+			    										<li> <i class="icon-circle text-success" ></i>  OTP data is usually delivered via a completely-independent network which reduces the chances of eavesdropping, while 2-Factor Authentication is initiated synchronously at both client and server end without any data transmission thus more secure.</li></ul>
+         </div> 
+         
+         <div className="why2fa1">
+            <h6>Google Authenticator/2 Factor Authentication</h6>
+             <p>
+             Google Authenticator on your mobile phone can act as a 2nd factor of authentication for you to gain access to Unocoin. Google Authenticator generates 6 digit numbers which keeps changing every 30 seconds that you need to key in while logging into Unocoin. Google Authenticator is available for Android, iPhone and Blackberry phones. After activating Google Authenticator, you can also have yourself key in the 6 digit number when your wallet is about to send more than a threshold number of bitcoins set by you with in 24 hours. After Enabling, you will need to activate it by using the 6 digit code from your mobile phone before the 2 factor authentication is active on your account. To install google authenticator on your mobile visit https://support.google.com/accounts/answer/1066447?hl=en.</p>
+         </div> 
+        
+      
+       
+      </div>;
+  }
+});
+
+var Notification = createReactClass({
+  render: function()
+   {
+    return<div className="AuthenticationSetting "> 
+
+         <p>Would you like to receive all the transaction alerts as </p>
+         <div className="profile_email">
+         <CustInputs placeholder="EMAIL" value="vadivelan@divum.in" logo={mail}/>
+     </div>
+     <div className="profile_mobilenumber">
+         <CustInputs placeholder="MOBILE NUMBER" value="08148579632" logo={mobile}/>
+     </div>
         
         
        
