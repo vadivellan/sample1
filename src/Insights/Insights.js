@@ -1,29 +1,32 @@
 import React, { Component } from 'react';
 import './style.css';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import {Carousel,Button, Icon} from 'react-materialize'
+
+import {Carousel} from 'react-materialize'
+
+
+  
+import { Tabs,Tab,ButtonToolbar ,Button,ButtonGroup,DropdownButton,MenuItem,Navbar,Nav,NavItem,NavDropdown} from 'react-bootstrap';
 
 
 import banner from '../images/banner.jpeg'
-import likes from '../images/likes.png'
-import author from '../images/author.png'
-import jQuery from 'jquery';
 var createReactClass = require('create-react-class');
-var Coverflow = require('react-coverflow');
+
 
 class Insights extends Component {
     render() {
       return (
         <div className="App ">
+             <MyComponent />
           <div className="InsightHeader ">
             <div className="container">
-              <a className="ProfileHeaderLink" href="#">Home</a>  <a  className="ProfileHeaderLink" href="#">/ Insights</a>
+              <a className="ProfileHeaderLink" href="#gg">Home</a>  <a  className="ProfileHeaderLink" href="#dgfd">/ Insights</a>
               <p className="ProfileHeaderString">Insights</p>
              </div> 
           </div>
          
           <ArticlesCarouselView/>
          <ArticlesView/>
+        
          
 
          
@@ -35,6 +38,55 @@ class Insights extends Component {
   }
 
 
+
+
+  const BUTTONS = ['Default', 'Primary', 'Success', 'Info', 'Warning', 'Danger'];
+  
+  function renderDropdownButton(title, i) {
+    return (
+      <DropdownButton bsStyle={title.toLowerCase()} title={title} key={i} id={`dropdown-basic-${i}`}>
+        <MenuItem eventKey="1">Action</MenuItem>
+        <MenuItem eventKey="2">Another action</MenuItem>
+        <MenuItem eventKey="3" active>Active Item</MenuItem>
+        <MenuItem divider />
+        <MenuItem eventKey="4">Separated link</MenuItem>
+      </DropdownButton>
+    );
+  }
+
+
+
+  class MyComponent extends React.Component {
+
+     renderDropdownButton(title, i) {
+        return (
+          <DropdownButton bsStyle={title.toLowerCase()} title={title} key={i} id={`dropdown-basic-${i}`}>
+            <MenuItem eventKey="1">Action</MenuItem>
+            <MenuItem eventKey="2">Another action</MenuItem>
+            <MenuItem eventKey="3" active>Active Item</MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey="4">Separated link</MenuItem>
+          </DropdownButton>
+        );
+      }
+
+
+  render() {
+    return (
+        <div>
+<ButtonToolbar>{BUTTONS.map(renderDropdownButton)}</ButtonToolbar>
+  </div>
+    );
+  }
+  
+  handleSelect(selectedTab) {
+    // The active tab must be set into the state so that
+    // the Tabs component knows about the change and re-renders.
+    this.setState({
+      activeTab: selectedTab
+    });
+  }
+}
 
   var ArticlesCarouselView = createReactClass({
     render: function()
@@ -59,9 +111,9 @@ class Insights extends Component {
       
           <div className="container ArticlesView">
             <ul className="ArticlesView">
-                <li ><a  className="active" href="#">Recent</a></li>
-                <li><a href="#">Most Visited</a></li>
-                <li><a href="#">Most Popular</a></li>
+                <li ><a  className="active" href="#fdgfd">Recent</a></li>
+                <li><a href="#dfgdf">Most Visited</a></li>
+                <li><a href="#fdgdf">Most Popular</a></li>
                
             </ul>
         </div>
@@ -111,7 +163,7 @@ class Insights extends Component {
 
          <div className="Article_content card">
              <div className="Article_bfImage">
-                 <img  className="Article_bfImage1"src={banner}></img>
+                 <img  className="Article_bfImage1"src={banner} alt="text"></img>
             </div>
             <div className="Article_Title container">
                  <h6>For The Love of Bitcoin</h6> 
@@ -134,7 +186,7 @@ class Insights extends Component {
 
          <div className="Article_content card">
              <div className="Article_bfImage">
-                 <img  className="Article_bfImage1"src={banner}></img>
+                 <img  className="Article_bfImage1"src={banner} ></img>
             </div>
             <div className="Article_Title container">
                  <h6>For The Love of Bitcoin</h6> 

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import './style.css';
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import banner from '../images/banner.jpeg'
+
 import likes from '../images/likes.png'
 import author from '../images/author.png'
 
@@ -20,7 +20,7 @@ class Article extends Component {
         
         <div className="InsightHeader ">
           <div className="container">
-            <a className="ProfileHeaderLink" href="#">Home</a>  <a  className="ProfileHeaderLink" href="#">/ Insights</a>
+            <a className="ProfileHeaderLink" href="#xcb">Home</a>  <a  className="ProfileHeaderLink" href="#xcbxcb">/ Insights</a>
             <p className="ProfileHeaderString">Insights</p>
            </div> 
         </div>
@@ -77,7 +77,7 @@ The success has even brought Bitcoin from the digital realm to the real world. A
                 <div className="hr"></div>
                 <div className="media">
                         <div className="media-left">
-                            <img src="https://www.w3schools.com/bootstrap/img_avatar1.png" className="media-object commentImage"  />
+                            <img src="https://www.w3schools.com/bootstrap/img_avatar1.png" className="media-object commentImage" alt="text" />
                         </div>
                         
                         <div className="media-body">

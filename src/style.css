@@ -31,16 +31,17 @@
   #PROFILE - HEADER
 \*------------------------------------*/
 .ProfileHeader {
-  height: 80px;
+  height: 85px;
   background-color: #00bdbd;
   text-align: left;
-  padding-top: 19px; }
+  padding-top: 9px;
+  font-weight: lighter; }
   .ProfileHeader .ProfileHeaderLink {
     color: white;
-    font-size: 12px; }
+    font-size: 10px; }
   .ProfileHeader .ProfileHeaderString {
     color: white;
-    font-size: 25px; }
+    font-size: 30px; }
 
 /*------------------------------------*\
   #PROFILE - SECTION HEADER
@@ -93,7 +94,7 @@
 .articlewrap {
   height: 0;
   overflow: hidden;
-  transition: all .2s ease-in; }
+  transition: all 10s ease-in; }
 
 .sectionhead {
   width: 100%;
@@ -104,9 +105,6 @@
   color: #888;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding-left: 0em;
-  padding-top: 1em;
-  padding-bottom: 1em;
   text-align: left;
   font-weight: lighter; }
 
@@ -139,6 +137,10 @@
 /*------------------------------------*\
   #PROFILE - PROFILE DETAILS 
 \*------------------------------------*/
+.accordoin {
+  position: relative;
+  top: 20px; }
+
 .profile_name, .profile_email, .profile_mobilenumber, .profile_address {
   display: block-line;
   height: 80px; }
@@ -147,7 +149,7 @@
     color: #00bdbd;
     font-weight: lighter;
     text-indent: 38px;
-    font-size: 0.7em; }
+    font-size: 0.52em; }
   .profile_name img, .profile_email img, .profile_mobilenumber img, .profile_address img {
     color: #00bdbd;
     position: absolute;
@@ -196,7 +198,7 @@
   color: #00bdbd;
   font-weight: lighter;
   text-indent: 1px;
-  font-size: 0.7em; }
+  font-size: 0.52em; }
 
 .display_inline {
   display: inline; }
@@ -209,8 +211,8 @@
 .List_picker {
   margin-top: 55px; }
   .List_picker .City, .List_picker .State {
-    margin-top: 10px;
-    margin-left: 40px;
+    margin-top: 15px;
+    margin-left: 53px;
     text-align: left; }
     .List_picker .City span, .List_picker .State span {
       display: block;
@@ -235,11 +237,14 @@
         font-size: 9px; }
 
 .PROOFS {
-  margin-top: 55px;
-  margin-left: 400px;
+  margin-top: 65px;
   position: relative; }
+  .PROOFS p {
+    color: #525252;
+    top: -100px; }
   .PROOFS .PAN, .PROOFS .ADTHAR, .PROOFS .PASSPORT {
-    margin: 10px; }
+    margin-right: 20px;
+    margin-bottom: 10px; }
     .PROOFS .PAN span, .PROOFS .ADTHAR span, .PROOFS .PASSPORT span {
       display: block;
       color: gray;
@@ -254,6 +259,16 @@
         content: "˅";
         padding-left: 10px;
         font-size: 9px; }
+
+.edit {
+  background-color: #00bdbd;
+  padding: 10px 35px;
+  color: white;
+  border-radius: 2px;
+  margin-top: 17px; }
+
+.display_inline {
+  display: inline-block; }
 
 @media only screen and (max-width: 632px) {
   .profile img {
@@ -284,17 +299,18 @@ form {
     border-bottom: form legend border; }
 
 .control {
-  height: 100px;
   position: relative;
   width: 100%;
   border-bottom: .control border; }
   .control input, .control textarea {
     display: block;
-    width: 100%;
+    width: 60%;
+    padding: 10px;
+    margin-top: 25px;
     border: 0;
     outline: 0;
-    border: 0.3px white solid;
-    border-bottom-color: #00bdbd;
+    border: 0.1px white solid;
+    border-bottom-color: #CDC8C8;
     font-weight: lighter;
     color: gray; }
     .control input + label, .control textarea + label {
@@ -312,5 +328,136 @@ form {
       font-size: 10px; }
     .control input:focus + label, .control textarea:focus + label {
       color: #00bdbd; }
+  .control .change {
+    background-color: #00bdbd;
+    padding: 10px 35px;
+    color: white;
+    border-radius: 2px;
+    margin: 17px 0px; }
+
+/*------------------------------------*\
+  #PROFILE - BankDetails
+\*------------------------------------*/
+.BankDetails {
+  margin-bottom: 25px; }
+  .BankDetails p {
+    color: #9F9C9C;
+    font-size: 13px; }
+  .BankDetails .account_name, .BankDetails .account_address, .BankDetails .account_number, .BankDetails .account_Bank, .BankDetails .account_ifsc {
+    display: block-line;
+    height: 80px; }
+    .BankDetails .account_name span, .BankDetails .account_address span, .BankDetails .account_number span, .BankDetails .account_Bank span, .BankDetails .account_ifsc span {
+      display: block;
+      color: #00bdbd;
+      font-weight: lighter;
+      font-size: 0.6em; }
+    .BankDetails .account_name input, .BankDetails .account_address input, .BankDetails .account_number input, .BankDetails .account_Bank input, .BankDetails .account_ifsc input {
+      padding: 8px 0px;
+      display: inline;
+      position: absolute;
+      border: 0.3px white solid;
+      border-bottom-color: #D3D3D3;
+      font-weight: 100;
+      height: auto;
+      color: #A7A7A7;
+      width: 90%;
+      font-size: 1.4em; }
+    .BankDetails .account_name textarea, .BankDetails .account_address textarea, .BankDetails .account_number textarea, .BankDetails .account_Bank textarea, .BankDetails .account_ifsc textarea {
+      display: inline;
+      position: absolute;
+      border: 0.3px white solid;
+      border-bottom-color: #D3D3D3;
+      font-weight: lighter;
+      color: #A7A7A7;
+      width: 90%;
+      height: 45px;
+      overflow-y: auto;
+      word-wrap: break-word;
+      word-break: break-all;
+      font-size: 1.4em; }
+  .BankDetails .remove, .BankDetails .edit {
+    background-color: #00bdbd;
+    padding: 8px 35px;
+    color: white;
+    border-radius: 2px;
+    margin: 15px 4px;
+    width: 260px; }
+
+/*------------------------------------*\
+  #PROFILE - AuthenticationSetting
+\*------------------------------------*/
+.AuthenticationSetting {
+  margin-bottom: 25px;
+  /* Rounded sliders */ }
+  .AuthenticationSetting p {
+    margin-top: 20px;
+    color: #9F9C9C;
+    font-size: 14px;
+    font-weight: lighter; }
+  .AuthenticationSetting span {
+    color: #727070;
+    font-size: 19px;
+    vertical-align: top;
+    position: relative; }
+  .AuthenticationSetting .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px; }
+  .AuthenticationSetting .switch input {
+    display: none; }
+  .AuthenticationSetting .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s; }
+  .AuthenticationSetting .slider:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 21px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s; }
+  .AuthenticationSetting input:checked + .slider {
+    background-color: #00bdbd; }
+  .AuthenticationSetting input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3; }
+  .AuthenticationSetting input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px); }
+  .AuthenticationSetting .slider.round {
+    border-radius: 25px; }
+  .AuthenticationSetting .slider.round:before {
+    border-radius: 50%; }
+  .AuthenticationSetting .why2fa {
+    margin: 30px 0px;
+    color: #727070; }
+    .AuthenticationSetting .why2fa ul li {
+      color: #9F9C9C;
+      font-size: 12px;
+      margin: 10px 2px; }
+  .AuthenticationSetting .why2fa1 {
+    margin: 30px 0px;
+    color: #727070; }
+    .AuthenticationSetting .why2fa1 p {
+      color: #9F9C9C;
+      font-size: 12px;
+      font-weight: normal; }
+  .AuthenticationSetting .remove, .AuthenticationSetting .edit {
+    background-color: #00bdbd;
+    padding: 8px 35px;
+    color: white;
+    border-radius: 2px;
+    margin: 15px 4px;
+    width: 260px; }
 
 /*# sourceMappingURL=style.css.map */
