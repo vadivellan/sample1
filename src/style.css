@@ -597,7 +597,7 @@ input:checked + .slider:before {
       margin-bottom: 20px; }
     .WalletSetting .col-md-6 .netki img.details, .WalletSetting .col-md-6 .AutoSell img.details, .WalletSetting .col-md-6 .PaperWallet img.details {
       position: absolute;
-      right: 22%; }
+      right: 21%; }
 
 input.read-more-state {
   display: none; }
