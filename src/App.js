@@ -7,6 +7,12 @@ import profile from './images/profile.png'
 import address from './images/address.png'
 import mobile from './images/mobile.png'
 import mail from './images/mail.png'
+import autosell from './images/autosell.png'
+import wallet from './images/wallet.png'
+import paperwallet from './images/paperwallet.png'
+import details from './images/details.png'
+import qrcode from './images/qrcode.png'
+
 
 
 var createReactClass = require('create-react-class');
@@ -150,7 +156,7 @@ var UserProfile = createReactClass({
          </div>
          <div className="profile_address">
          <CustInputs placeholder="ADDRESS" value="no 72 and 73 Divum Corp pvt limited domulur 560071" logo={address}/>
-         
+
 
            <div className="List_picker row ">
 
@@ -577,6 +583,8 @@ var WalletSetting = createReactClass({
       <div className="col-md-6">
 
          <div className="netki">
+         <img src={wallet} title="User" alt="text"/>
+         <img src={details} className="details" title="User" alt="text"/>
            <h5>Netki</h5>
            <p>Set a personalized memorable name for your wallet address</p>
            <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>
@@ -584,7 +592,10 @@ var WalletSetting = createReactClass({
       </div>
   
       <div className="col-md-6">
+
          <div className="AutoSell">
+         <img src={autosell} title="User" alt="text"/>
+         <img src={details} className="details" title="User" alt="text"/>
          <h5>AutoSell</h5>
          <p>Sell Bitcoins at current Selling price automatically</p>
           <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>
@@ -593,14 +604,57 @@ var WalletSetting = createReactClass({
  
       <div className="col-md-6">
       <div className="PaperWallet">
+      <img src={paperwallet} title="User" alt="text"/>
+      <img src={details} className="details" title="User" alt="text"/>
          <h5>Paper Wallet</h5>
          <p>Create bitcoin private and public key pairs through javascript</p>
           <btn  className="edit" type="submit" value="CHANGE">GENERATE NEW ADDRESS</btn> </div>
        </div>          
-       </div>  
+       </div> 
+
+      <PaperWallet/> 
+   
+         
 
 
       
+
+      </div>;
+  }
+});
+
+
+var PaperWallet=createReactClass({
+  render: function()
+   {
+    return<div className="PaperWallet"> 
+       <img src={paperwallet} title="User" alt="text"/>
+       <h5>Paper Wallet</h5>
+         <p>Create bitcoin private and public key pairs through javascript webpage to generate offline paper wallets that you can print and store securely. These addresses are generated using client side javascript which means our servers would not know what address your browser is generating for you. Before you use this address on the paper wallet, make sure you have taken a print out of the address-private key pair (Do not store this on your computer as it would defeat the protection that these paper wallets provide). Once you hit the "Print" button, you will see an option to add that address to your address book along with a nickname. Your address book will be visible when you try to send bitcoin from your wallet and if you have added a nickname to all addresses in your book, now is when it would come in handy.</p>
+        
+          <p>Generate PaperWallet :Warning and understand the instruction above before you use this feacture!</p>
+
+          <Card className="QRAdress">
+            <div>
+            <img src={qrcode} title="User" alt="text"/>
+             </div>
+             <div>
+            <img src={qrcode} title="User" alt="text"/>
+             </div>
+             <div>
+             <btn  className="edit" type="submit" value="CHANGE">GENERATE NEW ADDRESS</btn> 
+             <btn  className="edit" type="submit" value="CHANGE">GENERATE NEW ADDRESS</btn> 
+             <btn  className="edit" type="submit" value="CHANGE">GENERATE NEW ADDRESS</btn> 
+            
+             </div>
+            </Card>
+
+
+
+
+      
+
+
 
       </div>;
   }

@@ -175,7 +175,6 @@
     color: gray;
     text-indent: 25px;
     width: 90%;
-    maxHeight: 30px;
     font-size: 1em; }
 
 .profile_name img {
@@ -577,23 +576,51 @@ input:checked + .slider:before {
 /*------------------------------------*\
   #PROFILE - Notification
 \*------------------------------------*/
-.WalletSetting {
-  margin-bottom: 40px; }
-  .WalletSetting .col-md-6 {
-    text-align: center; }
-    .WalletSetting .col-md-6 .netki, .WalletSetting .col-md-6 .AutoSell, .WalletSetting .col-md-6 .PaperWallet {
-      margin: 0px auto; }
-      .WalletSetting .col-md-6 .netki h5, .WalletSetting .col-md-6 .AutoSell h5, .WalletSetting .col-md-6 .PaperWallet h5 {
-        margin-top: 45px;
-        margin-bottom: 10px;
-        color: #9F9C9C;
-        font-size: 1.9em;
-        font-weight: lighter; }
-      .WalletSetting .col-md-6 .netki p, .WalletSetting .col-md-6 .AutoSell p, .WalletSetting .col-md-6 .PaperWallet p {
-        max-width: 250px;
-        margin: 0px auto;
-        color: #9F9C9C;
-        font-size: 1.0em;
-        font-weight: lighter; }
+.WalletSetting .col-md-6 {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 55px; }
+  .WalletSetting .col-md-6 .netki, .WalletSetting .col-md-6 .AutoSell, .WalletSetting .col-md-6 .PaperWallet {
+    margin: 0px auto; }
+    .WalletSetting .col-md-6 .netki h5, .WalletSetting .col-md-6 .AutoSell h5, .WalletSetting .col-md-6 .PaperWallet h5 {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      color: #9F9C9C;
+      font-size: 1.9em;
+      font-weight: lighter; }
+    .WalletSetting .col-md-6 .netki p, .WalletSetting .col-md-6 .AutoSell p, .WalletSetting .col-md-6 .PaperWallet p {
+      max-width: 250px;
+      margin: 0px auto;
+      color: #9F9C9C;
+      font-size: 1.0em;
+      font-weight: lighter;
+      margin-bottom: 20px; }
+    .WalletSetting .col-md-6 .netki img.details, .WalletSetting .col-md-6 .AutoSell img.details, .WalletSetting .col-md-6 .PaperWallet img.details {
+      position: absolute;
+      right: 22%; }
+
+input.read-more-state {
+  display: none; }
+
+p.read-more-target {
+  font-size: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: .25s ease; }
+
+input.read-more-state:checked ~ div.read-more-wrap p.read-more-target {
+  font-size: inherit;
+  max-height: 999em;
+  opacity: 1; }
+
+input.read-more-state ~ label.read-more-trigger:before {
+  content: 'Read more'; }
+
+input.read-more-state:checked ~ label.read-more-trigger:before {
+  content: 'Read less'; }
+
+label.read-more-trigger {
+  cursor: pointer;
+  display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */

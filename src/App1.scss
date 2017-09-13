@@ -239,7 +239,7 @@ $label-font-size: 13px;
     color: gray;
     text-indent: 25px;
     width: 90%;
-    maxHeight:30px;
+   
     font-size: 1em;
 
   }
@@ -593,8 +593,6 @@ form {
     font-weight: lighter;
     color: #A7A7A7;
     width: 90%;
-   
-
     height: 45px;
     overflow-y: auto;
     word-wrap:break-word;
@@ -960,7 +958,7 @@ input:checked + .slider:before {
      
       h5
       {
-        margin-top: 45px;
+        margin-top: 5px;
         margin-bottom: 10px;
         color: #9F9C9C;
         font-size: 1.9em;
@@ -974,9 +972,40 @@ input:checked + .slider:before {
         color: #9F9C9C;
         font-size: 1.0em;
         font-weight: lighter;
+        margin-bottom: 20px;
+      }
+      img.details
+      {
+        position: absolute;
+        right: 22%;
       }
     }
+    margin-bottom: 50px;
+    margin-top: 55px;
   }
-  margin-bottom: 40px;
+ 
 
+}input.read-more-state {
+  display: none;
+}
+p.read-more-target {
+  font-size: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: .25s ease;
+}
+input.read-more-state:checked ~ div.read-more-wrap p.read-more-target {
+  font-size: inherit;
+  max-height: 999em;
+  opacity: 1;
+}
+input.read-more-state ~ label.read-more-trigger:before {
+  content: 'Read more';
+}
+input.read-more-state:checked ~ label.read-more-trigger:before {
+  content: 'Read less';
+}
+label.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
 }
