@@ -150,6 +150,7 @@ var UserProfile = createReactClass({
          </div>
          <div className="profile_address">
          <CustInputs placeholder="ADDRESS" value="no 72 and 73 Divum Corp pvt limited domulur 560071" logo={address}/>
+         
 
            <div className="List_picker row ">
 
