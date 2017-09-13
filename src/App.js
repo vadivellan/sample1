@@ -11,6 +11,7 @@ import mail from './images/mail.png'
 
 var createReactClass = require('create-react-class');
 
+
 class App extends Component {
   render() {
     return (
@@ -222,8 +223,8 @@ class Accordion extends React.Component{
       personalInfocollapse: false,
       ChangePasswordcollapse: false,
       BankAccountcollapse: false,
-      AuthenticationSettingcollapse: true,
-      WalletSettingcollapse: false,
+      AuthenticationSettingcollapse: false,
+      WalletSettingcollapse: true,
       Notificationcollapse: false,
 
      };
@@ -253,22 +254,25 @@ class Accordion extends React.Component{
     return (
       <div className="main">
           <div className="sectionhead" onClick={this.personalInfo}>Personal Information </div>
-          <hr/>
+         
                        <Collapse isOpen={this.state.personalInfocollapse}>
                           <UserProfile/>
                        </Collapse>
+                       <hr/>
           
           <div onClick={this.ChangePassword} className="sectionhead">Change Password</div>
-          <hr/>
+        
                       <Collapse isOpen={this.state.ChangePasswordcollapse}>
                                   <ChangePassword/>
                       </Collapse>
+                      <hr/>
 
           <div onClick={this.BankAccount} className="sectionhead">Bank Account</div>
-          <hr/>
+          
                       <Collapse isOpen={this.state.BankAccountcollapse}>
                                   <BankDetails/>
                       </Collapse>
+                      <hr/>
           <div onClick={this.AuthenticationSetting} className="sectionhead">Authentication Setting</div>
           
                       <Collapse isOpen={this.state.AuthenticationSettingcollapse}>
@@ -276,16 +280,18 @@ class Accordion extends React.Component{
                       </Collapse>
                       <hr/>
           <div onClick={this.WalletSetting} className="sectionhead">Wallet Setting</div>
-          <hr/>
+          
                       <Collapse isOpen={this.state.WalletSettingcollapse}>
-                                  <ChangePassword/>
+                                  <WalletSetting/>
                       </Collapse>
+                      <hr/>
 
           <div onClick={this.Notification} className="sectionhead">Notification</div>
-          <hr/>
+          
                       <Collapse isOpen={this.state.Notificationcollapse}>
                                   <Notification/>
-                      </Collapse>                                    
+                      </Collapse>  
+                      <hr/>                                  
        
       </div>
     );
@@ -387,39 +393,216 @@ var AuthenticationSetting = createReactClass({
 var Notification = createReactClass({
   render: function()
    {
-    return<div className="AuthenticationSetting "> 
+    return<div className="Notification"> 
 
-         <p>Would you like to receive all the transaction alerts as </p>
+         <p>Manage your notifications on updates,transactions and more</p>
          <div className="profile_email">
          <CustInputs placeholder="EMAIL" value="vadivelan@divum.in" logo={mail}/>
-     </div>
+       </div>
      <div className="profile_mobilenumber">
          <CustInputs placeholder="MOBILE NUMBER" value="08148579632" logo={mobile}/>
      </div>
         
+        <btn  className="remove" type="submit" value="CHANGE">UPDATE DETAILS</btn> 
+         <btn  className="edit" type="submit" value="CHANGE">ADD ALTERNATIVE</btn> 
         
        
 
-         <span>&ensp;2 Factor Authentication</span> 
+         
 
-          <div className="why2fa">
-            <h6>Why 2FA over OTP?</h6>
-            <ul><li> <i class="icon-circle text-success" ></i>  While receiving OTP on your mobile device looks like “Something you have control over”, your OTP is actually in possession with the origin server and the carrier transmitter making it vulnerable.</li>
-			 											
-			   											<li> <i class="icon-circle text-success" ></i>  2-Factor Authentication tokens are nothing but extension of the capability to generate user specific OTPs at client’s device rather than transmission of data over network.</li>
-														
-			    										<li> <i class="icon-circle text-success" ></i>  OTP data is usually delivered via a completely-independent network which reduces the chances of eavesdropping, while 2-Factor Authentication is initiated synchronously at both client and server end without any data transmission thus more secure.</li></ul>
+          <div className="Manage_notifications">
+            <h6>Manage notifications</h6>
+            <span className="items">NOTIFICATION</span> 
+            <div  className="display_inline">
+             <span className="switch switch1">EMAIL ID </span>  
+              <span className="switch">MOBILE</span>
+              </div>
+            <ul>
+
+
+             
+             <li> 
+                    <span className="items">Sending BTC from your wallet</span> 
+                    <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                    </div> 
+               </li>
+              <li> <span className="items">Receiving BTC from your wallet</span> 
+                  <div  className="display_inline">
+                 <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+              <li> <span className="items">Buying BTC</span> 
+              <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label> 
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+              <li> <span className="items">Selling BTC</span> 
+              <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+              <li> <span className="items">OTP</span> 
+              <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+               <li> <span className="items">Newsletter/updates</span> 
+               <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+
+            </ul>  
+
+            
+              
+             
          </div> 
          
-         <div className="why2fa1">
-            <h6>Google Authenticator/2 Factor Authentication</h6>
-             <p>
-             Google Authenticator on your mobile phone can act as a 2nd factor of authentication for you to gain access to Unocoin. Google Authenticator generates 6 digit numbers which keeps changing every 30 seconds that you need to key in while logging into Unocoin. Google Authenticator is available for Android, iPhone and Blackberry phones. After activating Google Authenticator, you can also have yourself key in the 6 digit number when your wallet is about to send more than a threshold number of bitcoins set by you with in 24 hours. After Enabling, you will need to activate it by using the 6 digit code from your mobile phone before the 2 factor authentication is active on your account. To install google authenticator on your mobile visit https://support.google.com/accounts/answer/1066447?hl=en.</p>
+         <div className="Logout">
+            <h5>Logout From All Devices</h5>
+             <p>Click the button below to logout from all device and merchant POS
+             </p>
          </div> 
         
+         <btn  className="edit" type="submit" value="CHANGE">LOGOUT EVERYWHERE ELSE</btn> 
       
        
       </div>;
   }
 });
+var Notification = createReactClass({
+  render: function()
+   {
+    return<div className="Notification"> 
+
+         <p>Manage your notifications on updates,transactions and more</p>
+         <div className="profile_email">
+         <CustInputs placeholder="EMAIL" value="vadivelan@divum.in" logo={mail}/>
+       </div>
+     <div className="profile_mobilenumber">
+         <CustInputs placeholder="MOBILE NUMBER" value="08148579632" logo={mobile}/>
+     </div>
+        
+        <btn  className="remove" type="submit" value="CHANGE">UPDATE DETAILS</btn> 
+         <btn  className="edit" type="submit" value="CHANGE">ADD ALTERNATIVE</btn> 
+        
+       
+
+         
+
+          <div className="Manage_notifications">
+            <h6>Manage notifications</h6>
+            <span className="items">NOTIFICATION</span> 
+            <div  className="display_inline">
+             <span className="switch switch1">EMAIL ID </span>  
+              <span className="switch">MOBILE</span>
+              </div>
+            <ul>
+
+
+             
+             <li> 
+                    <span className="items">Sending BTC from your wallet</span> 
+                    <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                    </div> 
+               </li>
+              <li> <span className="items">Receiving BTC from your wallet</span> 
+                  <div  className="display_inline">
+                 <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+              <li> <span className="items">Buying BTC</span> 
+              <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label> 
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+              <li> <span className="items">Selling BTC</span> 
+              <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+              <li> <span className="items">OTP</span> 
+              <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+               <li> <span className="items">Newsletter/updates</span> 
+               <div  className="display_inline">
+                      <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>  
+                      <label className="switch"><input type="checkbox"/> <span className="slider round"></span></label>
+                      </div> 
+               </li>
+
+            </ul>  
+
+            
+              
+             
+         </div> 
+         
+         <div className="Logout">
+            <h5>Logout From All Devices</h5>
+             <p>Click the button below to logout from all device and merchant POS
+             </p>
+         </div> 
+        
+         <btn  className="edit" type="submit" value="CHANGE">LOGOUT EVERYWHERE ELSE</btn> 
+      
+       
+      </div>;
+  }
+});
+
+var WalletSetting = createReactClass({
+  render: function()
+   {
+    return<div className="WalletSetting"> 
+    <div className="row">
+  
+      <div className="col-md-6">
+
+         <div className="netki">
+           <h5>Netki</h5>
+           <p>Set a personalized memorable name for your wallet address</p>
+           <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>
+           </div>
+      </div>
+  
+      <div className="col-md-6">
+         <div className="AutoSell">
+         <h5>AutoSell</h5>
+         <p>Sell Bitcoins at current Selling price automatically</p>
+          <label className="switch switch1"><input type="checkbox"/> <span className="slider round"></span></label>
+          </div>
+      </div>
+ 
+      <div className="col-md-6">
+      <div className="PaperWallet">
+         <h5>Paper Wallet</h5>
+         <p>Create bitcoin private and public key pairs through javascript</p>
+          <btn  className="edit" type="submit" value="CHANGE">GENERATE NEW ADDRESS</btn> </div>
+       </div>          
+       </div>  
+
+
+      
+
+      </div>;
+  }
+});
+
 export default App;

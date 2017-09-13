@@ -579,7 +579,7 @@ form {
     height:auto;
     color: #A7A7A7;
     width: 90%;
-    font-size: 1.4em;
+    font-size: 1.3em;
    
     
 
@@ -745,4 +745,238 @@ form {
   
  
 }
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $ThemeColor;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 25px;
+
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/*------------------------------------*\
+  #PROFILE - Notification
+\*------------------------------------*/
+
+
+
+.Notification
+{
+
+  p
+  {
+    margin-top: 20px;
+    margin-bottom: 35px;
+    color: #9F9C9C;
+    font-size: 14px;
+    font-weight: lighter
+  }
+
+  .remove,.edit
+  {
+    background-color: $ThemeColor;
+    padding: 8px 35px;
+    color: white;
+    border-radius: 2px;
+    margin:15px 4px;
+   
+    
+  }
+  .Manage_notifications
+  {
+
+    h6
+    {
+      margin-top: 65px;
+      margin-bottom: 15px;
+      color: #9F9C9C;
+      font-size: 1.7em;
+      font-weight: lighter;
+      
+    }
+    span.items
+    {
+      
+      vertical-align: top;
+      min-width: 300px;
+      display: inline-block;
+      color: $ThemeColor;
+      font-size: 0.8em;
+      font-weight: lighter;
+      margin-bottom: 15px;
+    
+     
+      
+    }
+    span.switch
+    {
+      
+       vertical-align: top;
+       width:65px;
+       margin-bottom: 15px;
+       
+       color: $ThemeColor;
+       font-size: 0.8em;
+       left: 20px;
+       display: inline-block;
+      
+      
+    }
+    span.switch1
+    {
+      
+      vertical-align: top;
+      margin-right: 45px;
+     
+      display: inline-block;
+      
+      
+    }
+    ul li
+    {
+      text-indent: -20px;
+      list-style-type:none;
+     
+    }
+    ul li span.items
+    {
+      
+      vertical-align: top;
+      min-width: 320px;
+      display: inline-block;
+      color: #9F9C9C;
+      font-size: 0.8em;
+      font-weight: lighter
+      
+    }
+    ul li label.switch
+    {
+      
+      vertical-align: top;
+      
+     
+      display: inline-block;
+      
+      
+    }
+    ul li label.switch1
+    {
+      
+      vertical-align: top;
+      margin-right: 55px;
+     
+      display: inline-block;
+      
+      
+    }
+    
+
+
+  }
+  .Logout
+  {
+    h5
+    {
+      margin-top: 65px;
+      margin-bottom: 0px;
+      color: #9F9C9C;
+      font-size: 1.7em;
+      font-weight: lighter;
+    }
+
+  
+  }
+
+}
+
+
+
+
+/*------------------------------------*\
+  #PROFILE - Notification
+\*------------------------------------*/
+.WalletSetting
+{
+  .col-md-6
+  {
+    
+   
+    text-align: center;
+    .netki ,.AutoSell,.PaperWallet
+    {
+      margin:  0px auto;
+     
+      h5
+      {
+        margin-top: 45px;
+        margin-bottom: 10px;
+        color: #9F9C9C;
+        font-size: 1.9em;
+        font-weight: lighter;
+      }
+      p
+      {
+        
+        max-width: 250px;
+        margin:  0px auto;
+        color: #9F9C9C;
+        font-size: 1.0em;
+        font-weight: lighter;
+      }
+    }
+  }
+  margin-bottom: 40px;
+
 }
